@@ -19,9 +19,19 @@ class Map
   end
 
   def get(key)
+    return nil if @map_array.length == 0
     key_value = @map_array.select { |arr| arr.first == key }
     return key_value.first.last if key_value
     nil
+  end
+
+  def delete(key)
+    value = self.get(key)
+    @map_array.delete([key,value])
+  end
+
+  def show
+    p @map_array
   end
 
 end
