@@ -73,4 +73,16 @@ class Play
     end
     return result
   end
+
+end
+
+class Playwright
+  def self.all
+    data = PlayDBConnection.instance.execute("SELECT * FROM playwrights")
+    result = []
+    data.each do |x|
+      result << Playwright.new(x)
+    end
+    return result
+  end
 end
