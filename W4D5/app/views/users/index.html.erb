@@ -1,0 +1,9 @@
+<h1>Below are all of MusicApp's users </h1>
+
+<% User.all.each do |user| %>
+  <ul>
+    <li><%= user.email %></li>
+    <li><%= user.session_token %></li>
+    <li><%= user.password_digest %></li>
+  </ul>
+<% end %>
